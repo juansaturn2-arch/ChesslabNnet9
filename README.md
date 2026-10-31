@@ -4,7 +4,32 @@
 It combines a modern alpha-beta search with its own NNUE network, trained from scratch on
 the K7NN format. The net and an opening book are built into a single `.exe`, so there are no extra files to install.
 
-> Early 4-CPU tests (300+3) put it at roughly **3350–3450 Elo**. More testing is welcome.
+> **Measured strength: 3340 ±18 Elo** (CCRL scale), from 467 games against Stockfish 7, 8 and 9 at 300+3.
+
+---
+
+## Strength testing
+
+**Gauntlet against CCRL-rated anchors.** Played with CLEloFinder 1.3 (K7 ChessLab), October 2026,
+time control 300+3, all games in
+[`ChesslabNNet9_vs_Stockfish_7-8-9.pgn`](ChesslabNNet9_vs_Stockfish_7-8-9.pgn).
+
+| Opponent | Anchor Elo | Games | Win | Draw | Loss | Score |
+|---|---|---|---|---|---|---|
+| Stockfish 7 64 | 3302 | 155 | 34 | 97 | 24 | 53.2% |
+| Stockfish 8 64 | 3358 | 156 | 23 | 100 | 33 | 46.8% |
+| Stockfish 9 64 | 3422 | 156 | 7 | 114 | 35 | 41.0% |
+| **Total** | | **467** | **64** | **311** | **92** | **47.0%** |
+
+**Result: ChesslabNNet9 = 3340 ±18 Elo** (95% confidence).
+
+| As White | As Black |
+|---|---|
+| +40 =162 −31 | +24 =149 −61 |
+
+**Outside test.** ChesslabNNet9 also played the *Chess Engines Diary* New Chess Engines examination
+(22.10.2026, 3+3): **20/26, tied 5th–6th of 27** (+16 =8 −2), finishing above several established
+engines rated 3250–3545 and qualifying for the CEDR league.
 
 ---
 
