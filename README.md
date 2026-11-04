@@ -4,7 +4,9 @@
 It combines a modern alpha-beta search with its own NNUE network, trained from scratch on
 the K7NN format. The net and an opening book are built into a single `.exe`, so there are no extra files to install.
 
-> **Measured strength: 3340 ±18 Elo** (CCRL scale), from 467 games against Stockfish 7, 8 and 9 at 300+3.
+> **Measured strength: 3340 ±18 Elo** (CCRL scale, 1 CPU), from 467 games against Stockfish 7, 8 and 9 at 300+3.
+>
+> **With 4 threads: 3438 ±24** against 1-CPU Stockfish 9, 10 and 11 (240 games at 300+3).
 
 ---
 
@@ -26,6 +28,23 @@ time control 300+3, all games in
 | As White | As Black |
 |---|---|
 | +40 =162 −31 | +24 =149 −61 |
+
+**4 threads against 1-CPU anchors.** Played with CLEloFinder 1.7 (K7 ChessLab), November 2026,
+time control 300+3, ChesslabNNet9 on **4 threads**, the Stockfish anchors on **1 CPU**. All games in
+[`SF11SF10SF09_Vs_NNet9_4cpus.pgn`](SF11SF10SF09_Vs_NNet9_4cpus.pgn).
+
+| Opponent | Anchor Elo | Games | Win | Draw | Loss | Score |
+|---|---|---|---|---|---|---|
+| Stockfish 9 64 | 3422 | 80 | 15 | 46 | 19 | 47.5% |
+| Stockfish 10 x64 | 3443 | 80 | 12 | 56 | 12 | 50.0% |
+| Stockfish 11 x64 | 3494 | 80 | 7 | 60 | 13 | 46.3% |
+| **Total** | | **240** | **34** | **162** | **44** | **47.9%** |
+
+**Result: ChesslabNNet9 on 4 threads = 3438 ±24 Elo** (95% confidence).
+
+The engine had 4 threads and the anchors had 1 CPU, so this result shows what Lazy SMP adds: about **+100 Elo** going
+from 1 to 4 threads. It isn't a rating-list number, because on a rating list every engine gets the same hardware.
+The 1-CPU rating above, 3340, is the like-for-like figure.
 
 **Outside test.** ChesslabNNet9 also played the *Chess Engines Diary* New Chess Engines examination
 (22.10.2026, 3+3): **20/26, tied 5th–6th of 27** (+16 =8 −2), finishing above several established
