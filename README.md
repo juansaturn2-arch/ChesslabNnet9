@@ -7,6 +7,8 @@ the K7NN format. The net and an opening book are built into a single `.exe`, so 
 > **Measured strength: 3340 ±18 Elo** (CCRL scale, 1 CPU), from 467 games against Stockfish 7, 8 and 9 at 300+3.
 >
 > **With 4 threads: 3438 ±24** against 1-CPU Stockfish 9, 10 and 11 (240 games at 300+3).
+>
+> **Chess Engines Diary rating list (CEDR): 3458.8**, rank 146, from 566 games.
 
 ---
 
@@ -49,6 +51,38 @@ The 1-CPU rating above, 3340, is the like-for-like figure.
 **Outside test.** ChesslabNNet9 also played the *Chess Engines Diary* New Chess Engines examination
 (22.10.2026, 3+3): **20/26, tied 5th–6th of 27** (+16 =8 −2), finishing above several established
 engines rated 3250–3545 and qualifying for the CEDR league.
+
+**Chess Engines Diary rating list (CEDR).** After qualifying, ChesslabNNet9 was tested by the
+[Chess Engines Diary](https://chessengines.blogspot.com) team and entered their rating list.
+
+| List | Rank | Rating | Games | Win | Draw | Loss | Points |
+|---|---|---|---|---|---|---|---|
+| CEDR | 146 | **3458.8** | 566 | 49 | 190 | 327 | 144.0 |
+
+Its neighbours on the list are established engines: Perseus 1.1 (3460.7) and Jackal 2.0.0 (3460.1) just above,
+Onyx 2.0 (3456.6), Illumina 3.0 (3455.3) and Luna CE 4.1.0 just below.
+
+**Elite Engines Test (Chess Engines Diary, 27.10.2026, 180+3, 24 engines).** Part of those games came from an
+elite round robin against Stockfish 19, Stockfish dev, Reckless, PlentyChess, Caissa, Alexandria and others.
+ChesslabNNet9 scored **66/230 (+27 =78 −125)**, 20th of 24. NNet9's games are in
+[`ChesslabNNet9_CEDR_EliteTest_2026-10-27.pgn`](ChesslabNNet9_CEDR_EliteTest_2026-10-27.pgn), courtesy of Chess Engines Diary.
+
+| Opponent | Win | Draw | Loss |
+|---|---|---|---|
+| VeryChess 0.11.0 | 9 | 1 | 0 |
+| EveAnn 7.0 | 3 | 7 | 0 |
+| Colossus 2026c | 5 | 2 | 3 |
+| Askaig 20261003 | 5 | 1 | 4 |
+| Yakka 1.6 | 4 | 5 | 1 |
+| Mittens CEDR | 0 | 9 | 1 |
+| CorChess 20261001 | 0 | 5 | 5 |
+| Tony 0.3 | 0 | 5 | 5 |
+| Stockfish 19 / Stockfish dev | 0 | 5 | 15 |
+
+**Conclusion.** The CEDR number runs higher than the CCRL-scale numbers above because CEDR uses its own scale
+(anchored at Critter 1.6a = 3250), its own engine pool and its own hardware, so the two shouldn't be compared directly.
+Read side by side, they agree: about **3340 on the CCRL scale (1 CPU)** and **3459 on CEDR**, placing ChesslabNNet9
+among established engines in the ~3450 band, ahead of well-known engines such as Myrddin 0.96.
 
 ---
 
